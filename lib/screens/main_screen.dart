@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../chatting/chat/chat_bubble.dart';
 import '../config/palette.dart';
 
 class LoginSignUpScreen extends StatefulWidget {
@@ -251,11 +252,15 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                                 blurRadius: 1,
                                 offset: Offset(0, 1))
                           ]),
-                      child: Icon(
+                      child: IconButton(
                         //TODO: 화살표 icon, 색은 하얀색
-                        Icons.arrow_forward,
+                        icon: Icon(Icons.arrow_forward),
                         color: Colors.white,
-                      )),
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const ChatScreen()),);
+                        }
+                      )
+                  ),
                 ),
               ),
             ),
